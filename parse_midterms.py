@@ -26,31 +26,24 @@ for i in range(len(wordlist)):
     wordlist[i] = wordlist[i].strip()
 BASE_DIR = ""
 TESTS = []
-if sys.argv[4] == "112":
-    BASE_DIR = "https://www2.ucsc.edu/courses/cmps112-wm/:/Old-Exams/"
-    TESTS = ["cmps112-2017q2-midterm.tt",
-             "cmps112-2017q4-midterm.tt",
-             "cmps112-2018q1-midterm.tt",
-             "cmps112-2018q2-midterm.tt",
-             "cmps112-2018q4-midterm.tt ",
-            ]
-elif sys.argv[4] == "104a":
-    BASE_DIR = "https://www2.ucsc.edu/courses/cmps104a-wm/:/Old-Exams/"
-    TESTS = ["cmps104a-2015q4-final.tt",
-             "cmps104a-2015q4-test1.tt",
-             "cmps104a-2015q4-test2.tt",
-             "cmps104a-2016q2-final.tt",
-             "cmps104a-2016q2-test1.tt",
-             "cmps104a-2016q2-test2.tt",
-             "cmps104a-2016q4-final.tt",
-             "cmps104a-2016q4-midterm.tt",
-             "cmps104a-2017q2-final.tt",
-             "cmps104a-2017q2-midterm.tt",
-             "cmps104a-2017q4-final.tt",
-             "cmps104a-2017q4-midterm.tt",
-             "cmps104a-2018q2-midterm.tt"]
 
-elif sys.argv[4] == "111":
+if sys.argv[4] == "111m":
+    BASE_DIR = "https://www2.ucsc.edu/courses/cse111-wm/:/Old-Exams/"
+    TESTS = ["cmps109-2018q3-midterm.tt",
+             "cmps109-2019q1-midterm.tt",
+             "cmps109-2019q2-midterm.tt",
+             "cmps109-2019q3-midterm.tt",
+             "cse111-2019q4-midterm.tt"]
+
+elif sys.argv[4] == "111f":
+    BASE_DIR = "https://www2.ucsc.edu/courses/cse111-wm/:/Old-Exams/"
+    TESTS = ["cmps109-2018q3-final.tt",
+             "cmps109-2019q1-final.tt",
+             "cmps109-2019q2-final.tt",
+             "cmps109-2019q3-final.tt",
+             "cse111-2019q4-final.tt"]
+
+elif sys.argv[4] == "111mf":
     BASE_DIR = "https://www2.ucsc.edu/courses/cse111-wm/:/Old-Exams/"
     TESTS = ["cmps109-2018q3-final.tt",
              "cmps109-2018q3-midterm.tt",
@@ -63,7 +56,7 @@ elif sys.argv[4] == "111":
              "cse111-2019q4-final.tt",
              "cse111-2019q4-midterm.tt"]
 else:
-    sys.exit("104a or 112 or 111 only")
+    sys.exit("111m|111f|111mf")
 for TEST in TESTS:
     URL = BASE_DIR + TEST
 
