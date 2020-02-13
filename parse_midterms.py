@@ -4,7 +4,7 @@ import sys
 import ssl
 
 ssl._create_default_https_context = ssl._create_unverified_context
-# avoid ssl verification error 
+# avoid ssl verification error
 
 # USAGE: python3 parse_midterms.py WORDDUMP OUTPUT ACCURACY [104a or 112]
 # Accuracy matches what percentage match of past test questions
@@ -49,8 +49,21 @@ elif sys.argv[4] == "104a":
              "cmps104a-2017q4-final.tt",
              "cmps104a-2017q4-midterm.tt",
              "cmps104a-2018q2-midterm.tt"]
+
+elif sys.argv[4] == "111":
+    BASE_DIR = "https://www2.ucsc.edu/courses/cse111-wm/:/Old-Exams/"
+    TESTS = ["cmps109-2018q3-final.tt",
+             "cmps109-2018q3-midterm.tt",
+             "cmps109-2019q1-final.tt",
+             "cmps109-2019q1-midterm.tt",
+             "cmps109-2019q2-final.tt",
+             "cmps109-2019q2-midterm.tt",
+             "cmps109-2019q3-final.tt",
+             "cmps109-2019q3-midterm.tt",
+             "cse111-2019q4-final.tt",
+             "cse111-2019q4-midterm.tt"]
 else:
-    sys.exit("104a or 112 only")
+    sys.exit("104a or 112 or 111 only")
 for TEST in TESTS:
     URL = BASE_DIR + TEST
 
